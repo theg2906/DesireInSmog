@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>霧慾 Desire in the Smog</title>
+<title>銅綠 PATINA — 永續服裝品牌</title>
+<link rel="icon" href="images/logo_mark.png">
 <style>
 :root{
   --deep:#3E4A2E; --olive:#8A8C5A; --smog:#C9CDC4; --lsmog:#E9EBE5;
@@ -13,137 +14,195 @@
 html{scroll-behavior:smooth}
 body{font-family:"Noto Serif TC","Songti TC",serif;color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased}
 .sans{font-family:"Helvetica Neue","Microsoft JhengHei",sans-serif}
-img{display:block;width:100%}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
-  padding:22px 44px;transition:.4s;mix-blend-mode:difference}
-nav .logo{font-size:24px;font-weight:700;letter-spacing:4px;color:#fff}
-nav ul{display:flex;gap:34px;list-style:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;
+  padding:16px 40px;transition:.4s;background:rgba(62,74,46,.0)}
+nav.solid{background:var(--deep);padding:12px 40px;box-shadow:0 2px 18px rgba(0,0,0,.18)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mk{width:40px;height:40px}
+.brand .nm{color:#fff;line-height:1}
+.brand .nm b{font-size:22px;letter-spacing:4px;display:block}
+.brand .nm span{font-family:"Helvetica Neue",sans-serif;font-size:10px;letter-spacing:5px;color:var(--brass)}
+nav .right{display:flex;align-items:center;gap:30px}
+nav ul{display:flex;gap:28px;list-style:none}
 nav ul li{font-size:13px;letter-spacing:2px;color:#fff;font-family:"Helvetica Neue",sans-serif}
 nav ul li a:hover{color:var(--brass)}
+.cartbtn{position:relative;cursor:pointer;color:#fff;font-size:22px;line-height:1;background:none;border:none}
+.cartbtn .count{position:absolute;top:-8px;right:-10px;background:var(--brass);color:var(--deep);font-family:sans-serif;
+  font-size:11px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:640px;background:var(--deep);overflow:hidden;display:flex;align-items:center}
 .hero .bg{position:absolute;inset:0 0 0 auto;width:52%;height:100%}
-.hero .bg img{height:100%;object-fit:cover}
+.hero .bg img{height:100%;width:100%;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep) 46%,rgba(62,74,46,0) 70%)}
 .hero .inner{position:relative;z-index:2;padding-left:8vw;max-width:760px}
-.hero .eyebrow{font-family:"Helvetica Neue",sans-serif;font-size:13px;letter-spacing:5px;color:var(--olive);margin-bottom:24px}
-.hero h1{font-size:120px;font-weight:700;color:var(--paper);line-height:.95;letter-spacing:6px}
-.hero .en{font-family:"Helvetica Neue",sans-serif;font-size:26px;letter-spacing:8px;color:var(--brass);margin:18px 0 28px}
+.hero .eyebrow{font-family:"Helvetica Neue",sans-serif;font-size:13px;letter-spacing:5px;color:var(--olive);margin-bottom:22px}
+.hero h1{font-size:118px;font-weight:700;color:var(--paper);line-height:.95;letter-spacing:8px}
+.hero .en{font-family:"Helvetica Neue",sans-serif;font-size:24px;letter-spacing:10px;color:var(--brass);margin:14px 0 26px}
 .hero p{color:var(--smog);font-size:18px;max-width:440px}
-.hero .scroll{position:absolute;bottom:36px;left:8vw;font-family:sans-serif;font-size:11px;letter-spacing:3px;color:var(--smog);z-index:2}
+.hero .cta{display:inline-block;margin-top:30px;background:var(--brass);color:var(--deep);font-family:sans-serif;
+  font-size:14px;letter-spacing:2px;padding:14px 34px;font-weight:700}
+.hero .cta:hover{background:#c79a5e}
 
-/* SECTION shells */
 section{padding:120px 0}
-.tag{font-family:"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:4px;color:var(--brass);
-  display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.tag{font-family:"Helvetica Neue",sans-serif;font-size:12px;letter-spacing:4px;color:var(--brass);display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .tag::before{content:"";width:34px;height:2px;background:var(--brass)}
 h2{font-size:44px;font-weight:700;color:var(--deep);letter-spacing:3px;line-height:1.2}
 
 /* STORY */
-.story{background:var(--paper)}
 .story .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
-.story .lead{font-size:24px;color:var(--brass);font-style:italic;margin:26px 0 24px;line-height:1.5}
-.story p{font-size:16px;color:var(--ink);margin-bottom:18px}
+.story .lead{font-size:23px;color:var(--brass);font-style:italic;margin:24px 0 22px;line-height:1.5}
+.story p{font-size:16px;margin-bottom:18px}
 .story .pic{aspect-ratio:3/4;overflow:hidden}
-.story .pic img{height:100%;object-fit:cover}
-.kw{display:flex;gap:16px;margin-top:34px}
-.kw div{flex:1;background:var(--deep);color:var(--paper);text-align:center;padding:22px 10px;border-radius:2px}
-.kw div b{display:block;font-size:22px;letter-spacing:3px}
+.story .pic img{width:100%;height:100%;object-fit:cover}
+.kw{display:flex;gap:16px;margin-top:32px}
+.kw div{flex:1;background:var(--deep);color:var(--paper);text-align:center;padding:20px 8px}
+.kw div b{display:block;font-size:21px;letter-spacing:3px}
 .kw div span{font-family:sans-serif;font-size:11px;letter-spacing:2px;color:var(--olive)}
 
-/* PALETTE band */
-.palette{background:var(--ink);color:var(--paper);padding:90px 0}
-.palette .row{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.palette .sw{height:230px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+/* PALETTE */
+.palette{background:var(--ink);color:var(--paper)}
+.palette .row{display:grid;grid-template-columns:repeat(4,1fr)}
+.palette .sw{height:210px;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
 .palette .sw small{font-family:sans-serif;font-size:11px;letter-spacing:2px;opacity:.85}
 .palette .sw b{font-size:18px;letter-spacing:2px;margin-top:6px}
 
-/* LOOKBOOK */
-.look{background:var(--lsmog)}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-.card{position:relative;overflow:hidden;background:#000}
-.card img{aspect-ratio:3/4;object-fit:cover;transition:.7s ease}
-.card:hover img{transform:scale(1.05)}
-.card .cap{position:absolute;left:0;right:0;bottom:0;padding:20px 22px;
-  background:linear-gradient(0deg,rgba(43,51,32,.92),rgba(43,51,32,0));color:#fff}
-.card .cap b{font-size:17px;letter-spacing:1px}
-.card .cap span{display:block;font-family:sans-serif;font-size:11px;letter-spacing:1px;color:var(--smog);font-style:italic;margin-top:3px}
+/* SHOP */
+.shop{background:var(--lsmog)}
+.shop .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:10px}
+.shop .head p{color:var(--olive);font-size:14px;font-family:sans-serif}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
+.prod{background:#fff;box-shadow:0 8px 26px rgba(43,51,32,.08);display:flex;flex-direction:column}
+.prod .imgw{aspect-ratio:3/4;overflow:hidden}
+.prod .imgw img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.prod:hover .imgw img{transform:scale(1.05)}
+.prod .info{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.prod .info b{font-size:18px;letter-spacing:1px}
+.prod .info .en{font-family:sans-serif;font-size:11px;letter-spacing:1px;color:var(--olive);font-style:italic;margin-top:3px}
+.prod .info .desc{font-size:13px;color:#6a7158;margin-top:10px;flex:1}
+.prod .row2{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.prod .price{font-family:sans-serif;font-size:18px;font-weight:700;color:var(--deep)}
+.add{background:var(--deep);color:#fff;border:none;font-family:sans-serif;font-size:13px;letter-spacing:1px;padding:10px 18px;cursor:pointer;transition:.3s}
+.add:hover{background:var(--brass);color:var(--deep)}
 
 /* CRAFT */
 .craft{background:var(--deep);color:var(--paper)}
 .craft h2{color:var(--paper)}
 .craft .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.craft .items{margin-top:10px}
-.craft .item{display:flex;gap:22px;padding:26px 0;border-bottom:1px solid rgba(201,205,196,.2)}
-.craft .num{flex:none;width:46px;height:46px;border-radius:50%;background:var(--brass);color:var(--deep);
-  display:flex;align-items:center;justify-content:center;font-weight:700;font-family:sans-serif;font-size:18px}
+.craft .item{display:flex;gap:22px;padding:24px 0;border-bottom:1px solid rgba(201,205,196,.2)}
+.craft .num{flex:none;width:46px;height:46px;border-radius:50%;background:var(--brass);color:var(--deep);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:sans-serif;font-size:18px}
 .craft .item b{font-size:20px;letter-spacing:1px;display:block;margin-bottom:6px}
 .craft .item p{color:var(--smog);font-size:15px}
 .craft .pic{aspect-ratio:3/4;overflow:hidden}
-.craft .pic img{height:100%;object-fit:cover}
+.craft .pic img{width:100%;height:100%;object-fit:cover}
 
-/* SUSTAIN strip */
-.sustain{background:var(--olive);color:#fff;text-align:center;padding:90px 0}
+.sustain{background:var(--olive);color:#fff;text-align:center;padding:88px 0}
 .sustain p{max-width:760px;margin:0 auto;font-size:26px;line-height:1.6;letter-spacing:1px}
-.sustain .small{font-family:sans-serif;font-size:13px;letter-spacing:4px;color:var(--deep);margin-bottom:18px}
+.sustain .small{font-family:sans-serif;font-size:13px;letter-spacing:4px;color:var(--deep);margin-bottom:16px}
 
-/* CONTACT / FOOTER */
-footer{background:var(--ink);color:var(--smog);padding:80px 0 36px}
+/* FOOTER */
+footer{background:var(--ink);color:var(--smog);padding:78px 0 34px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;align-items:start}
-footer .logo{font-size:40px;font-weight:700;color:var(--paper);letter-spacing:4px}
-footer .en{font-family:sans-serif;font-size:13px;letter-spacing:4px;color:var(--brass);margin-top:10px}
-footer h4{font-family:sans-serif;font-size:12px;letter-spacing:3px;color:var(--olive);margin-bottom:18px}
+footer .logo{font-size:38px;font-weight:700;color:var(--paper);letter-spacing:4px}
+footer .en{font-family:sans-serif;font-size:13px;letter-spacing:4px;color:var(--brass);margin-top:8px}
+footer h4{font-family:sans-serif;font-size:12px;letter-spacing:3px;color:var(--olive);margin-bottom:16px}
 footer ul{list-style:none;font-size:14px}
 footer ul li{margin-bottom:10px}
-footer ul li a:hover{color:var(--brass)}
 .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
-.ig img{aspect-ratio:1;object-fit:cover;filter:grayscale(.15)}
-.copy{border-top:1px solid rgba(201,205,196,.18);margin-top:56px;padding-top:24px;
-  font-family:sans-serif;font-size:12px;letter-spacing:1px;display:flex;justify-content:space-between;color:var(--olive)}
-.note{background:var(--brass);color:var(--deep);text-align:center;font-family:sans-serif;font-size:12px;letter-spacing:2px;padding:10px}
+.ig img{aspect-ratio:1;width:100%;object-fit:cover;filter:grayscale(.15)}
+.copy{border-top:1px solid rgba(201,205,196,.18);margin-top:54px;padding-top:24px;font-family:sans-serif;font-size:12px;letter-spacing:1px;display:flex;justify-content:space-between;color:var(--olive)}
 
-/* reveal */
+/* CART DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(20,24,14,.5);z-index:300;opacity:0;visibility:hidden;transition:.3s}
+.overlay.on{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:90vw;background:var(--paper);z-index:400;
+  transform:translateX(100%);transition:.35s ease;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.drawer .dh{background:var(--deep);color:#fff;padding:22px 24px;display:flex;justify-content:space-between;align-items:center}
+.drawer .dh b{font-size:18px;letter-spacing:2px}
+.drawer .x{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+.items{flex:1;overflow-y:auto;padding:16px 24px}
+.ci{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--smog)}
+.ci img{width:70px;height:88px;object-fit:cover;flex:none}
+.ci .m{flex:1}
+.ci .m b{font-size:15px}
+.ci .m .p{font-family:sans-serif;color:var(--brass);font-weight:700;margin-top:4px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px;font-family:sans-serif}
+.qty button{width:26px;height:26px;border:1px solid var(--olive);background:#fff;cursor:pointer;font-size:15px;color:var(--deep)}
+.qty .rm{margin-left:auto;background:none;border:none;color:#9a9a8a;font-size:12px;cursor:pointer;text-decoration:underline}
+.empty{text-align:center;color:var(--olive);padding:60px 20px;font-family:sans-serif}
+.dfoot{padding:22px 24px;border-top:1px solid var(--smog);background:#fff}
+.dfoot .tot{display:flex;justify-content:space-between;font-family:sans-serif;font-size:17px;font-weight:700;color:var(--deep);margin-bottom:16px}
+.checkout{width:100%;background:var(--brass);color:var(--deep);border:none;font-family:sans-serif;font-weight:700;letter-spacing:2px;padding:15px;cursor:pointer;font-size:15px}
+.checkout:hover{background:#c79a5e}
+.checkout:disabled{background:var(--smog);cursor:not-allowed}
+
+/* CHECKOUT MODAL */
+.modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.modal .box{background:var(--paper);width:520px;max-width:100%;max-height:92vh;overflow-y:auto}
+.modal .mh{background:var(--deep);color:#fff;padding:20px 26px;display:flex;justify-content:space-between;align-items:center}
+.modal .mh b{font-size:18px;letter-spacing:2px}
+.modal .body{padding:26px}
+.modal label{display:block;font-family:sans-serif;font-size:12px;letter-spacing:1px;color:var(--deep);margin:14px 0 6px}
+.modal input,.modal textarea,.modal select{width:100%;padding:11px 12px;border:1px solid var(--smog);background:#fff;font-family:sans-serif;font-size:14px}
+.modal .sum{background:#fff;border:1px solid var(--smog);padding:16px;margin:18px 0;font-family:sans-serif;font-size:14px}
+.modal .sum .l{display:flex;justify-content:space-between;padding:4px 0}
+.modal .sum .l.t{border-top:1px solid var(--smog);margin-top:8px;padding-top:10px;font-weight:700;color:var(--deep)}
+.placeorder{width:100%;background:var(--deep);color:#fff;border:none;font-family:sans-serif;font-weight:700;letter-spacing:2px;padding:15px;cursor:pointer;font-size:15px;margin-top:6px}
+.placeorder:hover{background:var(--brass);color:var(--deep)}
+.done{text-align:center;padding:40px 26px}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--olive);color:#fff;font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.done h3{font-size:24px;color:var(--deep);margin-bottom:10px}
+.done p{font-family:sans-serif;font-size:14px;color:#6a7158}
+
 .rv{opacity:0;transform:translateY(28px);transition:.9s ease}
 .rv.in{opacity:1;transform:none}
 
 @media(max-width:900px){
-  .hero h1{font-size:74px}.hero .bg{width:100%;opacity:.35}
+  .hero h1{font-size:70px}.hero .bg{width:100%;opacity:.32}
   .hero::after{background:linear-gradient(180deg,var(--deep),rgba(62,74,46,.4))}
   .story .grid,.craft .grid,.foot{grid-template-columns:1fr;gap:36px}
   .gal{grid-template-columns:1fr 1fr}.palette .row{grid-template-columns:1fr 1fr}
-  nav ul{display:none}.wrap{padding:0 22px}h2{font-size:32px}
+  nav ul{display:none}.wrap{padding:0 22px}h2{font-size:30px}
 }
 </style>
 </head>
 <body>
 
-<div class="note">網站設計稿 MOCKUP · 霧慾 Desire in the Smog — 視覺方向提案，內容與連結為示意</div>
-
-<nav>
-  <div class="logo">霧慾</div>
-  <ul class="sans">
-    <li><a href="#story">理念</a></li>
-    <li><a href="#look">系列</a></li>
-    <li><a href="#craft">工藝</a></li>
-    <li><a href="#contact">聯絡</a></li>
-  </ul>
+<nav id="nav">
+  <a class="brand" href="#top">
+    <svg class="mk" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="PATINA logo">
+      <path d="M50 12 C 31 34, 31 66, 50 88 C 69 66, 69 34, 50 12 Z" fill="none" stroke="#F4F5F1" stroke-width="6" stroke-linejoin="round"/>
+      <line x1="50" y1="22" x2="50" y2="82" stroke="#F4F5F1" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <span class="nm"><b>PATINA</b><span>銅綠</span></span>
+  </a>
+  <div class="right">
+    <ul class="sans">
+      <li><a href="#story">理念</a></li>
+      <li><a href="#shop">商品</a></li>
+      <li><a href="#craft">工藝</a></li>
+      <li><a href="#contact">聯絡</a></li>
+    </ul>
+    <button class="cartbtn" onclick="openCart()" aria-label="購物車">🛒<span class="count" id="count">0</span></button>
+  </div>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="bg"><img src="images/mask_portrait.jpg" alt="霧慾 面具形象"></div>
+<header class="hero" id="top">
+  <div class="bg"><img src="images/mask_portrait.jpg" alt="銅綠 PATINA 形象"></div>
   <div class="inner">
     <div class="eyebrow sans">ENVIRONMENTAL · SUSTAINABLE FASHION</div>
-    <h1>霧慾</h1>
-    <div class="en">DESIRE IN THE SMOG</div>
-    <p>在水泥叢林與綠化帶之間——呼吸、拉扯、自體修復。以服裝轉譯都市與自然角力的永續品牌。</p>
+    <h1>PATINA</h1>
+    <div class="en">銅綠</div>
+    <p>在水泥叢林與綠化帶之間——呼吸、拉扯、自體修復。金屬被自然回收，污染轉化為新生。</p>
+    <a class="cta sans" href="#shop">探索系列 SHOP</a>
   </div>
-  <div class="scroll sans">SCROLL ↓</div>
 </header>
 
 <!-- STORY -->
@@ -151,17 +210,17 @@ footer ul li a:hover{color:var(--brass)}
   <div class="wrap grid">
     <div class="rv">
       <div class="tag">BRAND STORY</div>
-      <h2>綠化帶不是裝飾，<br>而是城市的呼吸系統</h2>
-      <div class="lead">在污染源與居住空間之間，築起一道動態的淨化防線。</div>
-      <p>高度密集的都市結構中，霧慾以「都市與綠化帶之間的平衡」為核心，探討人造水泥叢林與自然生態間，那股拉扯、共生且不斷變動的動態過程。</p>
-      <p>面對因過度開發而失衡的環境，綠化帶扮演關鍵的修復者——透過植物吸附、空氣循環導引與景觀介入，嘗試淨化都市的霧霾與 PM2.5。本系列以遮蔽面部的黃銅面具、壓迫性重金屬結構，對比輕盈的仿真植物與半透明防護層，讓服裝成為一幅敘述「污染與修復」的行動藝術。</p>
+      <h2>銅綠——<br>金屬被自然回收的痕跡</h2>
+      <div class="lead">綠化帶不是裝飾，而是城市的呼吸系統。</div>
+      <p>品牌名「銅綠 PATINA」取自黃銅氧化後生成的綠鏽——金屬隨時間被自然轉化，正如都市的污染終將被綠意修復。我們以「都市與綠化帶之間的平衡」為核心，探討水泥叢林與自然生態間那股拉扯、共生且不斷變動的動態過程。</p>
+      <p>本系列以遮蔽面部的黃銅面具、壓迫性重金屬結構，對比輕盈的仿真植物與半透明防護層，讓服裝成為一幅敘述「污染與修復」的行動藝術。</p>
       <div class="kw">
         <div><b>平衡</b><span>BALANCE</span></div>
         <div><b>修復</b><span>RESTORATION</span></div>
         <div><b>共生</b><span>SYMBIOSIS</span></div>
       </div>
     </div>
-    <div class="pic rv"><img src="images/full_brass_set.jpg" alt="霧慾 系列形象"></div>
+    <div class="pic rv"><img src="images/full_brass_set.jpg" alt="銅綠系列形象"></div>
   </div>
 </section>
 
@@ -179,18 +238,14 @@ footer ul li a:hover{color:var(--brass)}
   </div>
 </section>
 
-<!-- LOOKBOOK -->
-<section class="look" id="look">
+<!-- SHOP -->
+<section class="shop" id="shop">
   <div class="wrap">
-    <div class="rv"><div class="tag">LOOKBOOK · 品牌型錄</div><h2>系列型錄</h2></div>
-    <div class="gal rv">
-      <a class="card"><img src="images/full_brass_set.jpg"><div class="cap"><b>雲朵項鍊套組</b><span>Cloud Necklace Set</span></div></a>
-      <a class="card"><img src="images/cloud_earring.jpg"><div class="cap"><b>雲朵耳環</b><span>Cloud Earrings</span></div></a>
-      <a class="card"><img src="images/full_horn_earring.jpg"><div class="cap"><b>角狀耳環造型</b><span>Horn Earring Look</span></div></a>
-      <a class="card"><img src="images/brass_rose.jpg"><div class="cap"><b>黃銅玫瑰戒</b><span>Brass Rose Ring</span></div></a>
-      <a class="card"><img src="images/cuff_ring2.jpg"><div class="cap"><b>泡泡戒與雲朵胸飾</b><span>Bubble Ring &amp; Brooch</span></div></a>
-      <a class="card"><img src="images/cloud_necklace.jpg"><div class="cap"><b>雲朵項鍊特寫</b><span>Cloud Necklace</span></div></a>
+    <div class="head rv">
+      <div><div class="tag">SHOP · 系列商品</div><h2>線上選購</h2></div>
+      <p>少量手工製作 · 全館滿 NT$2,000 免運</p>
     </div>
+    <div class="gal" id="gal"></div>
   </div>
 </section>
 
@@ -201,16 +256,13 @@ footer ul li a:hover{color:var(--brass)}
     <div class="rv">
       <div class="tag">MATERIAL &amp; CRAFT</div>
       <h2>材質與工藝</h2>
-      <div class="items">
-        <div class="item"><div class="num sans">1</div><div><b>手工搥打黃銅</b><p>大量純手工搥打，呈現空污侵蝕與工業重金屬的壓迫感；以控制搥擊密度與深淺為品管核心。</p></div></div>
-        <div class="item"><div class="num sans">2</div><div><b>半透明防護層</b><p>霧面薄膜模擬都市的隔離與防護，輕盈漂浮如懸浮微粒，與沉重金屬形成張力。</p></div></div>
-        <div class="item"><div class="num sans">3</div><div><b>仿真植物</b><p>綠色廊道的具象化，象徵自然對污染的吸附、轉化與修復，在服裝上持續呼吸。</p></div></div>
-      </div>
+      <div class="item"><div class="num sans">1</div><div><b>手工搥打黃銅</b><p>大量純手工搥打，呈現空污侵蝕與工業重金屬的壓迫感；以控制搥擊密度與深淺為品管核心。</p></div></div>
+      <div class="item"><div class="num sans">2</div><div><b>半透明防護層</b><p>霧面薄膜模擬都市的隔離與防護，輕盈漂浮如懸浮微粒，與沉重金屬形成張力。</p></div></div>
+      <div class="item"><div class="num sans">3</div><div><b>仿真植物</b><p>綠色廊道的具象化，象徵自然對污染的吸附、轉化與修復，在服裝上持續呼吸。</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- SUSTAIN -->
 <section class="sustain">
   <div class="wrap rv">
     <div class="small sans">OUR COMMITMENT</div>
@@ -218,39 +270,150 @@ footer ul li a:hover{color:var(--brass)}
   </div>
 </section>
 
-<!-- FOOTER / CONTACT -->
 <footer id="contact">
   <div class="wrap">
     <div class="foot">
       <div class="rv">
-        <div class="logo">霧慾</div>
-        <div class="en">DESIRE IN THE SMOG</div>
-        <p style="margin-top:20px;max-width:320px;font-size:14px">提倡環保永續發展的服裝設計品牌。<br>本頁為品牌網站設計稿。</p>
+        <div class="logo">PATINA</div>
+        <div class="en">銅綠 · COPPER PATINA</div>
+        <p style="margin-top:18px;max-width:320px;font-size:14px">提倡環保永續發展的服裝設計品牌。<br>金屬被自然回收，污染轉化為新生。</p>
       </div>
       <div class="rv">
         <h4>CONTACT</h4>
         <ul>
-          <li>www.desireinthesmog.com</li>
-          <li>hello@desireinthesmog.com</li>
+          <li>theg2906.github.io/DesireInSmog</li>
+          <li>hello@patina.studio</li>
           <li>Taipei, Taiwan</li>
         </ul>
       </div>
       <div class="rv">
-        <h4>INSTAGRAM @desire_in_the_smog</h4>
-        <div class="ig">
+        <h4>INSTAGRAM <a href="https://www.instagram.com/alligator.5770872" target="_blank" rel="noopener" style="color:var(--brass)">@alligator.5770872</a></h4>
+        <a class="ig" href="https://www.instagram.com/alligator.5770872" target="_blank" rel="noopener">
           <img src="images/cloud_earring.jpg"><img src="images/brass_rose.jpg"><img src="images/cuff_ring2.jpg">
           <img src="images/cloud_necklace.jpg"><img src="images/full_horn_earring.jpg"><img src="images/ring1.jpg">
-        </div>
+        </a>
       </div>
     </div>
-    <div class="copy sans"><span>© 2026 Desire in the Smog 霧慾</span><span>環保 · 永續 · 行動藝術</span></div>
+    <div class="copy sans"><span>© 2026 銅綠 PATINA</span><span>環保 · 永續 · 行動藝術</span></div>
   </div>
 </footer>
 
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer" aria-label="購物車">
+  <div class="dh"><b>購物車 CART</b><button class="x" onclick="closeCart()">×</button></div>
+  <div class="items" id="cartItems"></div>
+  <div class="dfoot">
+    <div class="tot"><span>小計 Subtotal</span><span id="subtotal">NT$0</span></div>
+    <button class="checkout" id="checkoutBtn" onclick="openCheckout()">前往結帳 CHECKOUT</button>
+  </div>
+</aside>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="modal">
+  <div class="box">
+    <div class="mh"><b id="modalTitle">結帳 CHECKOUT</b><button class="x" onclick="closeCheckout()">×</button></div>
+    <div class="body" id="modalBody"></div>
+  </div>
+</div>
+
 <script>
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-addEventListener('scroll',()=>{const n=document.querySelector('nav');n.style.padding=scrollY>40?'14px 44px':'22px 44px';});
+const PRODUCTS=[
+  {id:"overcoat",name:"外罩衫",en:"Sheer Overcoat",price:1500,img:"images/full_horn_earring.jpg",desc:"半透明防護層外罩衫，搭配手工黃銅角狀耳環。"},
+  {id:"dress",name:"連身洋裝",en:"Midi Dress",price:1280,img:"images/cloud_necklace.jpg",desc:"橄欖綠連身洋裝，呼應綠化帶的柔和層次。"},
+  {id:"necklace",name:"雲朵項鍊套組",en:"Cloud Necklace Set",price:1480,img:"images/full_brass_set.jpg",desc:"手工搥打黃銅雲朵項鍊與配件套組。"},
+  {id:"earring",name:"雲朵耳環",en:"Cloud Earrings",price:980,img:"images/cloud_earring.jpg",desc:"輕盈雲朵造型黃銅耳環，呼應都市天際。"},
+  {id:"rose",name:"黃銅玫瑰戒",en:"Brass Rose Ring",price:880,img:"images/brass_rose.jpg",desc:"螺旋綻放的黃銅玫瑰戒指，氧化質感。"},
+  {id:"spiral",name:"螺旋戒指",en:"Spiral Ring",price:820,img:"images/ring1.jpg",desc:"極簡螺旋黃銅戒指，日常永續配件。"},
+];
+const FREE_SHIP=2000, SHIP_FEE=120;
+const money=n=>"NT$"+n.toLocaleString("en-US");
+let cart=JSON.parse(localStorage.getItem("patina_cart")||"{}");
+const save=()=>localStorage.setItem("patina_cart",JSON.stringify(cart));
+const find=id=>PRODUCTS.find(p=>p.id===id);
+
+// render products
+document.getElementById("gal").innerHTML=PRODUCTS.map(p=>`
+  <div class="prod">
+    <div class="imgw"><img src="${p.img}" alt="${p.name}"></div>
+    <div class="info">
+      <b>${p.name}</b><div class="en">${p.en}</div>
+      <div class="desc">${p.desc}</div>
+      <div class="row2"><span class="price">${money(p.price)}</span>
+      <button class="add" onclick="addToCart('${p.id}')">加入購物車</button></div>
+    </div>
+  </div>`).join("");
+
+function totals(){let n=0,s=0;for(const id in cart){const p=find(id);if(p){n+=cart[id];s+=p.price*cart[id];}}return{n,s};}
+function refresh(){
+  const{n,s}=totals();
+  document.getElementById("count").textContent=n;
+  document.getElementById("subtotal").textContent=money(s);
+  document.getElementById("checkoutBtn").disabled=n===0;
+  const box=document.getElementById("cartItems");
+  if(n===0){box.innerHTML='<div class="empty">購物車是空的<br>探索系列加入心儀單品吧</div>';return;}
+  box.innerHTML=Object.keys(cart).map(id=>{const p=find(id);return `
+    <div class="ci">
+      <img src="${p.img}" alt="${p.name}">
+      <div class="m"><b>${p.name}</b><div class="p">${money(p.price)}</div>
+        <div class="qty">
+          <button onclick="chg('${id}',-1)">−</button><span>${cart[id]}</span><button onclick="chg('${id}',1)">+</button>
+          <button class="rm" onclick="rm('${id}')">移除</button>
+        </div>
+      </div>
+    </div>`;}).join("");
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;save();refresh();openCart();}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save();refresh();}
+function rm(id){delete cart[id];save();refresh();}
+function openCart(){document.getElementById("drawer").classList.add("on");document.getElementById("overlay").classList.add("on");}
+function closeCart(){document.getElementById("drawer").classList.remove("on");document.getElementById("overlay").classList.remove("on");}
+
+function openCheckout(){
+  const{n,s}=totals();if(n===0)return;
+  const ship=s>=FREE_SHIP?0:SHIP_FEE, total=s+ship;
+  document.getElementById("modalTitle").textContent="結帳 CHECKOUT";
+  document.getElementById("modalBody").innerHTML=`
+    <form onsubmit="placeOrder(event)">
+      <label>姓名 Name *</label><input required name="name" placeholder="王小綠">
+      <label>Email *</label><input required type="email" name="email" placeholder="you@example.com">
+      <label>聯絡電話 Phone *</label><input required name="phone" placeholder="09xx-xxx-xxx">
+      <label>配送地址 Address *</label><textarea required name="addr" rows="2" placeholder="台北市…"></textarea>
+      <label>付款方式 Payment</label>
+      <select name="pay"><option>貨到付款</option><option>信用卡（示意）</option><option>ATM 轉帳</option></select>
+      <div class="sum">
+        <div class="l"><span>商品小計</span><span>${money(s)}</span></div>
+        <div class="l"><span>運費${ship===0?"（免運）":""}</span><span>${money(ship)}</span></div>
+        <div class="l t"><span>應付總額</span><span>${money(total)}</span></div>
+      </div>
+      <button class="placeorder" type="submit">送出訂單 PLACE ORDER</button>
+    </form>`;
+  document.getElementById("modal").classList.add("on");
+}
+function closeCheckout(){document.getElementById("modal").classList.remove("on");}
+function placeOrder(e){
+  e.preventDefault();
+  const f=e.target, name=f.name.value;
+  const{s}=totals(); const ship=s>=FREE_SHIP?0:SHIP_FEE, total=s+ship;
+  const no="PT"+Date.now().toString().slice(-8);
+  cart={};save();refresh();
+  document.getElementById("modalTitle").textContent="訂單完成 CONFIRMED";
+  document.getElementById("modalBody").innerHTML=`
+    <div class="done">
+      <div class="ok">✓</div>
+      <h3>謝謝你，${name}！</h3>
+      <p>訂單編號 <b>${no}</b><br>應付總額 ${money(total)}<br><br>
+      確認信已寄出（示意）。我們將盡快為你手工備貨出貨。</p>
+      <button class="placeorder" onclick="closeCheckout()">完成</button>
+    </div>`;
+}
+
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeCheckout();}});
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>{nav.classList.toggle("solid",scrollY>60);});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+refresh();
 </script>
 </body>
 </html>
